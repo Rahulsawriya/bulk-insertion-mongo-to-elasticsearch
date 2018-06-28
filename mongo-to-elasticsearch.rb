@@ -6,9 +6,9 @@ class Bulk
     @client = Mongo::Client.new('mongodb://127.0.0.1:27017/test') #mongo connection with db name
     @collection = @client[:roc] #collection name here
   end
-  
+
   attr_reader :esclient, :collection
-  
+
   def execute
     data = []
     collection.find().each do |record|
